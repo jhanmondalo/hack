@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: green;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+}
+
+.hacked {
+    font-size: 4em;
+    animation: glitch 1s infinite;
+}
+
+.details {
+    font-size: 1.5em;
+    opacity: 0.8;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-5px, 0); }
+    40% { transform: translate(5px, 0); }
+    60% { transform: translate(-5px, 0); }
+    80% { transform: translate(5px, 0); }
+    100% { transform: translate(0); }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.code {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    white-space: pre;
+    font-size: 0.5em;
+    color: rgba(0, 255, 0, 0.1);
+    animation: codeScroll 5s linear infinite;
+}
+
+@keyframes codeScroll {
+    from { transform: translateY(100%); }
+    to { transform: translateY(-100%); }
+}
